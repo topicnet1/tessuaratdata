@@ -1,0 +1,782 @@
+/* Gaya dasar untuk overlay */
+#custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Transparansi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+}
+
+/* Konten notifikasi */
+.custom-alert-content {
+    background-color: #ffffff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 0.5s;
+}
+
+/* Teks pesan */
+#custom-alert-message {
+    font-size: 16px;
+    color: #333333;
+    font-family: Arial, sans-serif;
+}
+
+/* Animasi masuk */
+@keyframes fadeIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Sembunyikan overlay */
+.hidden {
+    display: none;
+}
+
+/* Modal Style */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Payment Options */
+.payment-options img {
+    width: 80px;
+    height: auto;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.payment-options img:hover {
+    transform: scale(1.1);
+    border-color: #007bff;
+}
+
+/* Payment Modal */
+.payment-logo {
+    width: 100px;
+    height: auto;
+    margin: 20px auto;
+}
+
+.account-number {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8ca8c3;
+}
+
+/* Copy Message */
+#copyMessage {
+    color: green;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    .payment-options img {
+        width: 60px;
+    }
+}
+
+
+/* Container Styling */
+.sedwhish {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.sedwhish .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Title Styling */
+.sedwhish .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #544949;
+}
+
+/* Wishes Section */
+.sedwhish .wishes {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: left;
+}
+
+/* Input Fields */
+.sedwhish input[type="text"],
+.sedwhish textarea {
+    width: calc(100% - 20px);
+    margin: 10px 10px 20px 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.sedwhish textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Submit Button */
+.sedwhish button {
+    background-color: #2b3c4e;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sedwhish button:hover {
+    background-color: #bccad9;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .sedwhish .container {
+        padding: 15px;
+    }
+
+    .sedwhish .title {
+        font-size: 20px;
+    }
+
+    .sedwhish input[type="text"],
+    .sedwhish textarea {
+        width: calc(100% - 10px);
+    }
+}
+
+/* Container untuk Wishes Section */
+#wishes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(69, 55, 55, 0.496);
+}
+
+/* Kotak untuk setiap ucapan */
+.wish {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(81, 66, 66, 0.914);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wish:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Nama pengirim ucapan */
+.wish-name {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Komentar ucapan */
+.wish-comment {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.4;
+}
+
+.swiper-wrapper {
+    display: flex;
+    justify-content: center;
+    /* Posisi horizontal di tengah */
+    align-items: center;
+    /* Posisi vertikal di tengah */
+    height: 100%;
+    /* Tinggi penuh container */
+    gap: 20px;
+    /* Jarak antar elemen */
+}
+
+.swiper-slide {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Konten di dalam slide berada di tengah horizontal */
+    justify-content: center;
+    /* Konten di dalam slide berada di tengah vertikal */
+    text-align: center;
+    height: auto;
+    /* Tinggi otomatis berdasarkan konten */
+}
+.image-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Sesuaikan dengan tinggi wadah */
+    position: relative;
+}
+
+.image-holder img {
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Sudut melengkung */
+    object-fit: cover; /* Agar gambar menyesuaikan dengan ruang tanpa mengubah rasio aspek */
+}
+
+
+.banner-content {
+    align-items: center;
+    margin-top: 15px;
+    /* Jarak antara gambar dan teks */
+}
+
+
+/* Animasi Testimoni */
+.testimonial-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-slide blockquote p {
+    font-size: 16px;
+    font-style: italic;
+    color: #060606;
+    line-height: 1.6;
+}
+
+.testimonial-slide .review-title {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #557291;
+}
+
+/* Swiper Style for Testimonial */
+.testimonial-swiper .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial-swiper .swiper-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial-swiper .swiper {
+    padding: 2rem;
+    border-radius: 10px;
+    background: rgba(10, 10, 10, 0.635);
+}
+
+
+
+.ke2tengah {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Bisa diganti dengan center jika ingin elemen di tengah */
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Memberikan jarak antar kolom */
+}
+
+.container {
+    max-width: 100%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.video-content {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.video-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.video-player {
+    position: absolute;
+    top: 50%;
+    /* Pusatkan tombol secara vertikal */
+    left: 50%;
+    /* Pusatkan tombol secara horizontal */
+    transform: translate(-50%, -50%);
+    /* Menjaga tombol tetap di tengah */
+    z-index: 10;
+    /* Pastikan tombol berada di atas gambar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Efek transparan di belakang tombol */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Efek saat hover */
+}
+
+.video-player:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    /* Tambahkan efek zoom saat hover */
+}
+
+.video-player svg {
+    fill: white;
+}
+
+
+
+
+.footer {
+    background-color: rgba(30 30 30 / 20%);
+    /* Warna latar gelap */
+    backdrop-filter: blur(10px);
+}
+
+.social-media {
+    margin-bottom: 15px;
+}
+
+.social-icon {
+    color: #846f6f;
+    /* Warna ikon putih */
+    font-size: 24px;
+    /* Ukuran ikon */
+    margin: 0 10px;
+    /* Spasi antar ikon */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #49558b;
+    /* Warna ikon saat hover */
+    transform: scale(1.2);
+    /* Efek zoom saat hover */
+}
+
+.copyright-text {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #a79292;
+}
+
+
+
+
+.hidden {
+    display: none;
+    /* Sembunyikan konten secara default */
+}
+
+.btn {
+    cursor: pointer;
+    /* Tambahkan kursor pointer */
+}
+
+
+/* Menghilangkan tombol close pada modal */
+.modal-header .btn-close {
+    display: none;
+    /* Menyembunyikan tombol close */
+}
+
+/* Menghilangkan interaksi dengan backdrop */
+.modal-backdrop {
+    pointer-events: none;
+    /* Menghindari penutupan modal dengan klik di luar */
+}
+
+
+
+
+
+
+/* Gaya untuk loading screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(211, 205, 205, 0.7);
+    /*Latarbelakangsemi-transparan*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    -webkit-transition: opacity 0.3s ease, visibility 0.3s ease;
+    -moz-transition: opacity 0.3s ease, visibility 0.3s ease;
+    -ms-transition: opacity 0.3s ease, visibility 0.3s ease;
+    -o-transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loading-screen .loading-content {
+    text-align: center;
+}
+
+.loading-screen img {
+    max-width: 100px;
+    animation: spin 2s linear infinite;
+    /* Animasi putar GIF */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Gaya untuk menyembunyikan loading screen setelah halaman dimuat */
+.loading-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+
+
+
+
+#loading-screen {
+    display: none;
+}
+
+.modal {
+    display: none; /* Pastikan modal tidak tampil secara otomatis */
+}
+
+.modal.show {
+    display: block; /* Modal hanya akan muncul jika kelas 'show' ditambahkan */
+}
+
+
+/* Section Billboard */
+#billboard {
+    background-color: #f8f9fa; /* Warna latar belakang terang */
+    padding: 1.5rem 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Modal Survey */
+#modal-survey .modal-dialog {
+    max-width: 350px; /* Lebar modal */
+    margin: 1rem auto;
+    border: none;
+}
+
+#modal-survey .modal-content {
+    border: none;
+    border-radius: 10px; /* Membulatkan sudut modal */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+    background: linear-gradient(135deg, #ffffff, #f2f2f2); /* Gradien latar */
+}
+
+#modal-survey .modal-header {
+    background: linear-gradient(135deg, #bf9ebc, #3e4e8d); /* Gradien menarik */
+    color: #ffffff; /* Warna teks putih */
+    padding: 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+#modal-survey .modal-header::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: #c8c0c0;
+    border-radius: 2px;
+}
+
+#modal-survey .modal-title {
+    font-size: 1rem;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#modal-survey .modal-body {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+#modal-survey #surat-gif {
+    max-width: 50%; /* Lebar gambar */
+    height: auto;
+    cursor: pointer;
+    border-radius: 10px; /* Membulatkan gambar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan gambar */
+}
+
+#modal-survey #surat-gif:hover {
+    transform: scale(1.1); /* Animasi zoom saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat */
+}
+
+#modal-survey .modal-body p {
+    font-size: 0.85rem; /* Ukuran teks */
+    color: #6c757d;
+    margin-top: 1rem;
+}
+
+/* Tombol Close */
+#modal-survey .btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: #a52f2f;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#modal-survey .btn-close:hover {
+    transform: scale(1.1);
+    background-color: #f8f9fa;
+}
+
+#modal-survey .btn-close:before {
+    content: '×';
+    font-size: 1.25rem;
+    color: #453950;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .sedwhish {
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .wishes {
+        margin-bottom: 20px;
+    }
+
+    .wish {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 10px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .wish-content {
+        font-size: 16px;
+    }
+
+    .wish-time {
+        font-size: 14px;
+        color: #888;
+        text-align: right;
+    }
+
+    .submit-wish {
+        text-align: center;
+    }
+
+    #nameInput, #wishInput {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
